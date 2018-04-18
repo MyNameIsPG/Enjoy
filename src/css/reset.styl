@@ -1,8 +1,13 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
 h1, h2, h3, h4, h5, h6 {
     margin: 0px;
     padding: 0px;
+    font-weight: normal;
 }
-ul {
+ul, ol {
     list-style: none
     margin: 0px
     padding: 0px
@@ -10,6 +15,15 @@ ul {
 a {
     text-decoration: none;
     color: #576b95;
+}
+a:hover,
+a:link,
+a:active,
+a:visited {
+	text-decoration: none
+}
+img {
+	border: 0
 }
 
 /*
@@ -21,53 +35,26 @@ $font-size14 = 14px
 $font-size15 = 15px
 $font-size16 = 16px
 $font-size18 = 18px
+$font-size24 = 24px
 /*
 * 颜色值设置
 */
 $ffffff = #ffffff
 $f6f8f9 = #f6f8f9
 $999999 = #999999
+$f25500 = #f25500
 /*
 * margin设置
 */
-$marginTop5 = 5px
-$marginTop10 = 10px
-$marginTop15 = 15px
-$marginTop20 = 20px
-$marginRight5 = 5px
-$marginRight10 = 10px
-$marginRight15 = 15px
-$marginRight20 = 20px
-$marginBottom5 = 5px
-$marginBottom10 = 10px
-$marginBottom15 = 15px
-$marginBottom20 = 20px
-$marginLeft5 = 5px
-$marginLeft10 = 10px
-$marginLeft15 = 15px
-$marginLeft20 = 20px
-$marginAuto = 0 auto
-
+$margin5 = 5px
+$margin10 = 10px
+$margin15 = 15px
+$margin20 = 20px
+$marginAuto = auto
 /*
-* 按钮设置
+* padding设置
 */
-.addBtn {
-    width: 100px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    background: #f25500;
-    color: #ffffff;
-    font-size: 15px;
-    border: none;
-    border-radius: 5px;
-}
-
-/*
-* 表格设置
-*/
-.tableDataList {
-    background: $ffffff;
-    overflow: hidden;
-    padding: 30px;
-}
+$paddingTop5 = 5px
+$paddingTop10 = 10px
+$paddingTop15 = 15px
+$paddingTop20 = 20px
