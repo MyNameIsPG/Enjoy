@@ -14,6 +14,7 @@ export default {
     components: { UE },
     data() {
         return {
+            defaultMsg: '',
             config: {
                 initialFrameWidth: null,
                 initialFrameHeight: 350
