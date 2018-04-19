@@ -7,6 +7,7 @@ const index = resolve => require(['@/components/index.vue'], resolve);
 const home = resolve => require(['@/components/home.vue'], resolve);
 
 const fnHelp = resolve => require(['@/components/content/fn-help.vue'], resolve);
+const fnHelpAdd = resolve => require(['@/components/content/fn-help-add.vue'], resolve);
 const fnNotice = resolve => require(['@/components/content/fn-notice.vue'], resolve);
 const fnCity = resolve => require(['@/components/content/fn-city.vue'], resolve);
 
@@ -22,6 +23,7 @@ const router = new Router({
             children: [
                 { path: 'home', component: home, meta: { title: '首页' } },
                 { path: 'fnHelp', component: fnHelp, meta: { title: '帮助文档' } },
+                { path: 'fnHelpAdd', component: fnHelpAdd, meta: { title: '新建文档' } },
                 { path: 'fnNotice', component: fnNotice, meta: { title: '系统通知' } },
                 { path: 'fnCity', component: fnCity, meta: { title: '城市服务' } },
                 { path: '/index', redirect: 'home', meta: { title: '首页' } }

@@ -1,16 +1,16 @@
 <template>
     <div>
-        <div style="overflow: hidden; margin-bottom: 30px;">
+        <div class="searchColumn">
             <form action="">
-                <div class="col-lg-4">
+                <el-col :span="6">
                     <el-input
                         placeholder="请输入标题"
                         prefix-icon="el-icon-search"
                         v-model="name">
                     </el-input>
-                </div>
+                </el-col>
                 <div class="pull-right">
-                    <button class="addBtn" type="button">新建文档</button>
+                    <button class="addBtn" @click="addBtnRouter" type="button">新建文档</button>
                 </div>
             </form>
         </div>
@@ -82,6 +82,9 @@ export default {
         },
         handleCurrentChange(val) {
             console.log(`当前页: ${val}`);
+        },
+        addBtnRouter(){
+            this.$router.push({path: '/index/fnHelpAdd'})
         }
     },
 }

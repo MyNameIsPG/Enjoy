@@ -1,5 +1,6 @@
 html, body {
     background $f6f8f9
+    overflow-x hidden
 }
 .__index {
     background $f6f8f9
@@ -100,6 +101,38 @@ html, body {
     }
 }
 
+/*
+* 搜索栏设置
+*/
+.searchColumn {
+    overflow hidden
+    margin-bottom 30px
+    div:first-child {
+        padding-left 0px
+    }
+    .el-input__inner {
+        border-radius: 4px;
+        border: 1px solid #eeeeee;
+        color: #606266;
+        height: 50px;
+        line-height: 50px;
+        outline: 0;
+        padding: 0 30px 0 15px
+    }
+    .el-input__prefix {
+        right 5px
+        left auto
+    }
+    .el-input__icon {
+        height: 100%;
+        width: 30px;
+        text-align: center;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        line-height: 50px;
+        color: #9b9b9b;
+    }
+}
 
 /*
 * 按钮设置
