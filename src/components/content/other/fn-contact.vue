@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="btnBox">
-            <button class="addBtn pull-right" type="button">发布</button>
+            <button class="addBtn pull-right" type="button">保存</button>
         </div>
         <!-- <button @click="getUEContent()">获取内容</button>
         <button @click="getUEContentTxt()">获取无文本内容</button> -->
