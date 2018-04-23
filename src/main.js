@@ -11,6 +11,8 @@ import 'bootstrap/dist/js/bootstrap.min.js' */
 import '@/css/public.styl'
 Vue.use(ElementUI);
 
+
+
 import '../static/UE/ueditor.config.js'
 import '../static/UE/ueditor.all.js'
 import '../static/UE/lang/zh-cn/zh-cn.js'
