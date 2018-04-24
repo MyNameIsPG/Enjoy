@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { login2, denglu, help, helpList } from "api/login/index";
+import { login2, denglu, help, helpList, helpListlist } from "api/login/index";
 
 /* var AV = require('leancloud-storage/live-query');
 var APP_ID = 'rSsp3rkOKqx9l8SM0GM7M2QH-gzGzoHsz';
@@ -47,7 +47,8 @@ export default {
 		}
 	},
 	mounted(){
-		this.postHelpList()
+		this.postHelpList();
+		this.postHelpListlist();
 	},
 	methods: {
 		btn(){
@@ -84,6 +85,16 @@ export default {
 				uuid: '5add9d4f9f545471fec65361',
 			};
 			helpList(params).then(response => {
+				debugger
+			})
+		},
+		postHelpListlist(){
+			let params = {
+				pageSize: 10,
+				pageNub: 0,
+				status: 1
+			};
+			helpListlist(params).then(response => {
 				debugger
 			})
 		}

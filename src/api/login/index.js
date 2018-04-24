@@ -53,19 +53,20 @@ export function helpList(params) {
         var query = new AV.Query('HelpFile');
         query.get(params.uuid).then(function(HelpFile) {
             console.log(HelpFile)
-                // 成功获得实例
-                // todo 就是 id 为 57328ca079bc44005c2472d0 的 Todo 对象实例
         }, function(error) {
             // 异常处理
         });
-        /* let Query = AV.Object.extend('HelpFile');
-        let query = new Query();
-        query.set('title', params.title)
-        query.set('contern', params.contern)
-        query.save().then(res => {
-            resolve(res)
-        }, (err) => {
-            reject(err)
-        }) */
+    })
+}
+
+//查询单条记录objectId
+export function helpListlist(params) {
+    return new Promise((resolve, reject) => {
+        var cql = 'select * from HelpFile limit ?,?'
+            //var cql = 'select * from HelpFile where status = 1'
+        var pvalues = [params.pageNub, params.pageSize];
+        AV.Query.doCloudQuery(cql, pvalues).then(function(data) {
+            var results = data.results;
+        });
     })
 }
