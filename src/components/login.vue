@@ -24,16 +24,6 @@
 <script>
 import { login2, denglu, help, helpList, helpListlist } from "api/login/index";
 
-/* var AV = require('leancloud-storage/live-query');
-var APP_ID = 'rSsp3rkOKqx9l8SM0GM7M2QH-gzGzoHsz';
-var APP_KEY = 'oVnrVCTJL2kimdw2Toc2IQrV';
-
-
-AV.init({
-  appId: APP_ID,
-  appKey: APP_KEY
-});
- */
 export default {
 	data(){
 		return {
@@ -59,6 +49,7 @@ export default {
 			};
 			login2(params).then(response => {
 				debugger
+				
 			})
 		},
 		btn1(){
@@ -66,9 +57,12 @@ export default {
 				username1: this.username1,
 				password1: this.password1,
 			};
-			debugger
-			denglu(params).then(response => {
-				debugger
+			denglu(params).then(data => {
+				if(data.code!=200){
+					this.errorCode(data.code);
+				}else{
+					alert()
+				}
 			})
 		},
 		btn2(){
@@ -92,10 +86,10 @@ export default {
 			let params = {
 				pageSize: 10,
 				pageNub: 0,
-				status: 1
+				status: '1'
 			};
 			helpListlist(params).then(response => {
-				debugger
+				console.log('diaoyong')
 			})
 		}
 	},

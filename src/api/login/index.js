@@ -1,7 +1,7 @@
 import * as axios from 'axios'
 var AV = require('leancloud-storage/live-query');
-//var AV = require('leancloud-storage/live-query');
 import BASEDATA from '@/util/config.js'
+
 
 AV.init({
     appId: BASEDATA.appInfo.appId,
@@ -26,8 +26,10 @@ export function login2(params) {
 //登录
 export function denglu(params) {
     return new Promise((resolve, reject) => {
-        AV.User.logIn(params.username1, params.password1).then(function(loginedUser) {
-            resolve(loginedUser)
+        AV.User.logIn(params.username1, params.password1).then(function(data) {
+            resolve(data)
+        }, (err) => {
+            resolve(err)
         });
     })
 }
@@ -62,11 +64,12 @@ export function helpList(params) {
 //查询单条记录objectId
 export function helpListlist(params) {
     return new Promise((resolve, reject) => {
-        var cql = 'select * from HelpFile limit ?,?'
-            //var cql = 'select * from HelpFile where status = 1'
-        var pvalues = [params.pageNub, params.pageSize];
+        var cql = 'select * from HelpFile where status=? order by objectId limit ?,?'
+            //var cql = 'select top 10 from HelpFile where status=?'
+        var pvalues = [params.status, params.pageNub, params.pageSize];
         AV.Query.doCloudQuery(cql, pvalues).then(function(data) {
             var results = data.results;
+            resolve(data)
         });
     })
 }
