@@ -49,7 +49,6 @@ export default {
 			};
 			login2(params).then(response => {
 				debugger
-				
 			})
 		},
 		btn1(){
@@ -58,10 +57,10 @@ export default {
 				password1: this.password1,
 			};
 			denglu(params).then(data => {
-				if(data.code!=200){
+				if(data.code){
 					this.errorCode(data.code);
 				}else{
-					alert()
+					alert(12)
 				}
 			})
 		},
